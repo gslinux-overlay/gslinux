@@ -34,7 +34,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-PATCHES=("${FILESDIR}"set-old-vers.path)
+PATCHES=("${FILESDIR}"/set-old-vers.path)
 
 src_configure() {
 	cmake-utils_src_configure
