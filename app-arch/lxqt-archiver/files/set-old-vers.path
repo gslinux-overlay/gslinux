@@ -1,7 +1,0 @@
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -12,3 +12,3 @@
- set(GLIB_MINIMUM_VERSION "2.50.0")
--set(LIBFMQT_MINIMUM_VERSION "0.14.1")
-+set(LIBFMQT_MINIMUM_VERSION "0.15.0")
- set(LXQTBT_MINIMUM_VERSION "0.7.0")
