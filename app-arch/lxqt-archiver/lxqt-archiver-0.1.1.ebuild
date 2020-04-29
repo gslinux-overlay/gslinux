@@ -34,9 +34,9 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-PATCHES=("${FILESDIR}"/set-old-vers.path)
 
 src_configure() {
+    sed -i "s/0.15.0/0.14.1/" CMakeLists.txt
 	cmake-utils_src_configure
 }
 
