@@ -16,7 +16,7 @@ IUSE="osc"
 RDEPEND="
 	>=dev-libs/libxml2-2.5
 	>=media-plugins/swh-plugins-0.4.6
-	>=media-sound/jack-audio-connection-kit-0.80.0
+	virtual/jack
 	>=sci-libs/fftw-3.0.1
 	>=x11-libs/gtk+-3:3
 	>=media-libs/clutter-1.12.0
