@@ -3,19 +3,19 @@
 
 EAPI=6
 
-inherit git-r3 cmake-utils
+inherit cmake-utils
 
 DESCRIPTION="A collection of open-source LV2 plugins"
 HOMEPAGE="http://ssj71.github.io/infamousPlugins/index.html"
-EGIT_REPO_URI="https://github.com/ssj71/infamousPlugins.git"
+SRC_URI="https://github.com/ssj71/infamousPlugins/archive/v${PV}.tar.gz"
 
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 LICENSE=""
 SLOT="0"
 IUSE=""
 
 RDEPEND="
-x11-libs/ntk
+    x11-libs/ntk
 	x11-libs/cairo
 	media-libs/lv2
 	media-libs/zita-resampler
