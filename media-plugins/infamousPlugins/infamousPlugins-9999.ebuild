@@ -3,13 +3,20 @@
 
 EAPI=6
 
-inherit git-r3 cmake-utils
+inherit cmake-utils
 
 DESCRIPTION="A collection of open-source LV2 plugins"
 HOMEPAGE="http://ssj71.github.io/infamousPlugins/index.html"
 EGIT_REPO_URI="https://github.com/ssj71/infamousPlugins.git"
 
-KEYWORDS=""
+if [[ ${PV} == *9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/ssj71/infamousPlugins.git"
+else
+	SRC_URI="https://github.com/ssj71/infamousPlugins/archive/v${PV}.tar.gz"
+	KEYWORDS="amd64 x86"
+fi
+
 LICENSE=""
 SLOT="0"
 IUSE=""
