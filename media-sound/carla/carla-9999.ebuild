@@ -23,7 +23,7 @@ fi
 LICENSE="GPL-2 LGPL-3"
 SLOT="0"
 
-IUSE="alsa ffmpeg gtk gtk2 jack libav lv2ui opengl plugins osc -pulseaudio rdf samplers sf2 sndfile X"
+IUSE="alsa gtk gtk2 jack libav lv2ui opengl plugins osc -pulseaudio rdf samplers sf2 sndfile X"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}
@@ -31,10 +31,6 @@ RDEPEND="${PYTHON_DEPS}
 	jack? ( virtual/jack )
 	lv2ui? ( x11-libs/gtk+:2 x11-libs/gtk+:3 dev-python/PyQt5 )
 	alsa? ( media-libs/alsa-lib )
-	ffmpeg? (
-		libav? ( media-video/libav:0= )
-		!libav? ( media-video/ffmpeg:0= )
-	)
 	gtk? ( x11-libs/gtk+:3 )
 	gtk2? ( x11-libs/gtk+:2 )
 	osc? (
@@ -73,7 +69,7 @@ src_compile() {
 		HAVE_PYQT5=true
 		DEFAULT_QT=5
 		HAVE_ALSA=$(usex alsa true false)
-		HAVE_FFMPEG=$(usex ffmpeg true false)
+		HAVE_FFMPEG=false
 		HAVE_FLUIDSYNTH=$(usex sf2 true false)
 		HAVE_GTK2=$(usex gtk2 true false)
 		HAVE_GTK3=$(usex gtk true false)
