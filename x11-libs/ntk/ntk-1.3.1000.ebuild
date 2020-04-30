@@ -1,11 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-PYTHON_COMPAT=( python{3_6,3_7,3_8} )
-PYTHON_REQ_USE="threads(+)"
-inherit python-any-r1 waf-utils
+inherit waf-utils
 
 DESCRIPTION="Fast Light ToolKit fork, adding improved graphics rendering via Cairo"
 HOMEPAGE="http://non.tuxfamily.org/wiki/NTK"
@@ -41,10 +39,6 @@ PATCHES=(
 	"${FILESDIR}"/noldconfig-r1.patch
 	"${FILESDIR}"/nooptimize.patch
 )
-
-src_unpack() {
-	git-r3_src_unpack
-}
 
 src_configure() {
 	local mywafconfargs=(
