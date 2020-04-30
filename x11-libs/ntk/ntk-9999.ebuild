@@ -3,7 +3,9 @@
 
 EAPI=6
 
-inherit waf-utils
+PYTHON_COMPAT=( python{2_7,3_2,3_3} )
+PYTHON_REQ_USE="threads(+)"
+inherit python-any-r1 waf-utils
 
 DESCRIPTION="Fast Light ToolKit fork, adding improved graphics rendering via Cairo"
 HOMEPAGE="http://non.tuxfamily.org/wiki/NTK"
