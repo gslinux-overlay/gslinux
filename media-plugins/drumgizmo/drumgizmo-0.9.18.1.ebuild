@@ -7,11 +7,17 @@ EAPI=6
 
 DESCRIPTION="Open source cross-platform drum plugin & stand-alone application."
 HOMEPAGE="http://drumgizmo.org"
-SRC_URI="http://www.drumgizmo.org/releases/${P}/${P}.tar.gz"
+
+if [[ ${PV} == *9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="http://git.drumgizmo.org/drumgizmo.git"
+else
+	SRC_URI="http://www.drumgizmo.org/releases/${P}/${P}.tar.gz"
+	KEYWORDS="amd64 x86"
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
 
 RDEPEND="virtual/jack
 	media-libs/lv2
