@@ -25,7 +25,7 @@ CDEPEND="
 	media-sound/jack2[dbus]
 	media-sound/jack_capture
 	a2jmidid? ( media-sound/a2jmidid[dbus] )
-	ladish? ( >=media-sound/ladish-9999 )
+	ladish? ( >=media-sound/ladish-1 )
 	pulseaudio? ( media-sound/pulseaudio[jack] )
 "
 RDEPEND="${CDEPEND}"
