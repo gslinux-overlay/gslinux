@@ -13,7 +13,7 @@ if [[ ${PV} == *9999 ]]; then
 	KEYWORDS=""
 else
 	SRC_URI="https://github.com/openAVproductions/openAV-Luppp/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
+	KEYWORDS="amd64 x86"
 	S="${WORKDIR}/openAV-Luppp-release-${PV}"
 fi
 LICENSE="GPL-3"
