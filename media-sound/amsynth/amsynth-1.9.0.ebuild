@@ -11,6 +11,7 @@ HOMEPAGE="https://github.com/amsynth/amsynth"
 if [[ ${PV} == *9999* ]]; then
 	inherit autotools git-r3
 	EGIT_REPO_URI="https://github.com/amsynth/amsynth.git"
+	KEYWORDS=""
 else
 	SRC_URI="https://github.com/${PN}/${PN}/releases/download/release-${PV}/${P}.tar.bz2"
 	KEYWORDS="amd64 ~ppc x86"
