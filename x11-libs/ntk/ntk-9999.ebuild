@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python{2_7,3_2,3_3} )
+PYTHON_COMPAT=( python3_{6,7,8} )
 PYTHON_REQ_USE="threads(+)"
 inherit python-any-r1 waf-utils
 
@@ -16,6 +16,7 @@ if [[ ${PV} == *9999* ]]; then
 else
 	SRC_URI="https://git.tuxfamily.org/non/fltk.git/snapshot/fltk-${PV}.tar.gz"
 	KEYWORDS="amd64 x86"
+	S=${WORKDIR}/fltk-${PV}
 fi
 
 RESTRICT="test"
