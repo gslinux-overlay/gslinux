@@ -9,7 +9,7 @@ DESCRIPTION="Open source cross-platform drum plugin & stand-alone application."
 HOMEPAGE="http://drumgizmo.org"
 
 if [[ ${PV} == *9999* ]]; then
-	inherit git-r3
+	inherit autotools git-r3
 	EGIT_REPO_URI="http://git.drumgizmo.org/drumgizmo.git"
 else
 	SRC_URI="http://www.drumgizmo.org/releases/${P}/${P}.tar.gz"
@@ -30,5 +30,8 @@ DEPEND="${RDEPEND}"
 
 src_configure()
 {
+if [[ ${PV} == *9999* ]]; then
+    eautoreconf
+fi
 	econf --enable-lv2
 }
