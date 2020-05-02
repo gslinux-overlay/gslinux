@@ -6,18 +6,11 @@ EAPI=6
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE='threads(+)'
 
-inherit flag-o-matic python-single-r1 waf-utils
+inherit flag-o-matic git-r3 python-single-r1 waf-utils
 
 DESCRIPTION="LADI Session Handler - a session management system for JACK applications"
 HOMEPAGE="https://github.com/LADI/ladish"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/LADI/${PN}.git"
-	EGIT_SUBMODULES=()
-else
-	SRC_URI="https://github.com/LADI/ladish/archive/${P}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
-fi
+EGIT_REPO_URI="https://github.com/LADI/${PN}.git"
 
 LICENSE="GPL-2"
 SLOT="0"
