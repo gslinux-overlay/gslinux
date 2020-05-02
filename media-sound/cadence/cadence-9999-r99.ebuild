@@ -59,8 +59,8 @@ src_install() {
 	# Clean up stuff that shouldn't be installed
 	rm -rf "${D}/etc/X11/xinit/xinitrc.d/61cadence-session-inject"
 	rm -rf "${D}/etc/xdg/autostart/cadence-session-start.desktop"
-#	rm -rf "${D}/usr/share/applications/catarina.desktop"
-#	rm -rf "${D}/usr/bin/catarina"
+	rm -rf "${D}/usr/share/applications/catarina.desktop"
+	rm -rf "${D}/usr/bin/catarina"
 
 	if use !pulseaudio; then
 		rm -rf "${D}"/usr/bin/cadence-pulse2{jack,loopback}
