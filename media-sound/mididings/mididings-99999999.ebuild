@@ -9,7 +9,7 @@ inherit distutils-r1
 DESCRIPTION="A MIDI router and processor based on Python, supporting ALSA and JACK MIDI"
 HOMEPAGE="http://das.nasophon.de/mididings/"
 
-if [ "${PV}" == *9999* ]; then
+if [ "${PV}" == *99999999* ]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/dsacre/mididings.git"
 	KEYWORDS=""
