@@ -1,0 +1,14 @@
+diff --git a/Makefile.in b/Makefile.in
+index aad1217..d9eedda 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -166,7 +166,6 @@ install_jack:	jack
+ 	@$(MAKE) INSTALL_ROOT=$(DESTDIR) -f $(name_jack).mak install
+ 	@install -d -v -m 0755 $(DESTDIR)$(mandir)/man1
+ 	@install -v -m 0644 $(name)*.1 $(DESTDIR)$(mandir)/man1
+-	@gzip -nvf $(DESTDIR)$(mandir)/man1/$(name)*.1
+ 
+ 
+ uninstall_core:	core
+-- 
+2.24.1
