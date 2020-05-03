@@ -36,8 +36,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-PATCHES=( "${FILESDIR}"/drumkv1-dont-compress-manpages.patch )
-
 src_prepare() {
 	if [[ ${PV} == *9999 ]]; then
 		eautoreconf
