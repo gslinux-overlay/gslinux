@@ -1,9 +1,0 @@
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -116,7 +116,7 @@
- 
- ## Top documentation dir
- IF(NOT DEFINED MusE_DOC_DIR)
--      SET(MusE_DOC_DIR ${SHARE_INSTALL_PREFIX}/doc/${MusE_INSTALL_NAME}/)
-+      SET(MusE_DOC_DIR ${SHARE_INSTALL_PREFIX}/doc/museseq-9999/)
- ENDIF(NOT DEFINED MusE_DOC_DIR)
