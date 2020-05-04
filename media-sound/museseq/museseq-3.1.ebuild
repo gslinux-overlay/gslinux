@@ -42,7 +42,7 @@ BDEPEND="
 	dev-qt/linguist-tools:5
 "
 
-S=${WORKDIR}/${P}/muse-3.1
+S=${WORKDIR}/muse-3.1
 
 src_configure() {
 	local mycmakeargs+=(
