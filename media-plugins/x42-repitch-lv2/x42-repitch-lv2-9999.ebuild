@@ -18,6 +18,7 @@ IUSE=""
 
 RDEPEND="
 	media-libs/lv2
+	media-libs/libsamplerate
 "
 
 src_compile() {
