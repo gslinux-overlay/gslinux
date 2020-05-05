@@ -22,10 +22,19 @@ COMMON_DEPEND="
 	>=media-libs/libsndfile-1.0.11
 	virtual/jack
 	virtual/pkgconfig
+	dev-qt/designer:5
+	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
+	dev-qt/qtdeclarative:5
 	dev-qt/qtxml:5
 	dev-qt/qtgui:5
+	dev-qt/qthelp:5
+	dev-qt/qtnetwork:5
+	dev-qt/qtprintsupport:5
+	dev-qt/qtquickcontrols2:5
+	>=dev-qt/qtsingleapplication-2.6.1_p20171024[X]
 	dev-qt/qtsvg:5
+	dev-qt/qtxmlpatterns:5
 	python? ( ${PYTHON_DEPS} )
 	dssi? ( >=media-libs/dssi-0.9.0 )
 	lash? ( >=media-sound/lash-0.4.0 )
