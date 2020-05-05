@@ -7,7 +7,7 @@ EAPI=7
 # We need the one from cmake-utils
 inherit git-r3
 
-DESCRIPTION="Audio Level Meters"
+DESCRIPTION="Counterbalance pitch when vari-speeding"
 HOMEPAGE="https://x42-plugins.com/x42/x42-repitch"
 EGIT_REPO_URI="https://github.com/x42/repitch.lv2.git"
 
