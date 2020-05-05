@@ -19,15 +19,9 @@ IUSE=""
 RDEPEND="
 	media-libs/lv2
 	sci-libs/fftw
+	media-libs/libsamplerate
 "
 
 src_prepare() {
 	cmake-utils_src_prepare
-}
-
-src_compile() {
-	emake
-}
-src_install() {
-	emake install PREFIX="${D}/usr"
 }
