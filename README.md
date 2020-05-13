@@ -9,11 +9,12 @@ location = /var/db/repos/brave-overlay
 
 sync-type = git
 
-sync-uri = https://gitlab.com/gslinux-overlay/gslinux.git
+sync-uri = https://github.com/gslinux-overlay/gslinux.git
 
 priority = 50
 
 auto-sync = Yes
+
 
 
 and run emerge --sync
