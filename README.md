@@ -5,7 +5,7 @@ To add this overlay in the our Gentoo based system make file gslinux.conf in /et
 
 [gslinux]
 
-location = /var/db/repos/brave-overlay
+location = /var/db/repos/gslinux
 
 sync-type = git
 
