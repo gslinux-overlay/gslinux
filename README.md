@@ -14,7 +14,3 @@ sync-uri = https://github.com/gslinux-overlay/gslinux.git
 priority = 50
 
 auto-sync = Yes
-
-
-
-and run emerge --sync
