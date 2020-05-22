@@ -3,7 +3,9 @@
 
 EAPI=6
 
-inherit git-r3 waf-utils
+PYTHON_COMPAT=( python3_{6,7,8} )
+PYTHON_REQ_USE="threads(+)"
+inherit git-r3 python-any-r1 waf-utils
 
 DESCRIPTION="Audio effect plugins (LV2, VST2, LADSPA) for glitch effects"
 HOMEPAGE="https://github.com/grejppi/bitrot"
