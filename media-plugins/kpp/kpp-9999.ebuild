@@ -47,8 +47,3 @@ src_configure() {
 	local emesonargs=()
 	meson_src_configure
 }
-
-src_compile() {
-	meson_src_compile
-	eninja
-}
