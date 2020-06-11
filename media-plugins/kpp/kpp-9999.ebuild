@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 meson
+inherit git-r3 meson ninja-utils
 
 DESCRIPTION="Kapitonov-Plugins-Pack - set of plugins for guitar sound processing"
 HOMEPAGE="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack"
@@ -45,4 +45,8 @@ DEPEND="${RDEPEND}"
 
 src_configure() {
 	meson_src_configure
+}
+
+src_compile() {
+	eninja
 }
