@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 meson ninja-utils
+inherit git-r3 meson
 
 DESCRIPTION="Kapitonov-Plugins-Pack - set of plugins for guitar sound processing"
 HOMEPAGE="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack"
@@ -38,7 +38,7 @@ CDEPEND="
 	media-libs/zita-resampler
 	media-libs/zita-convolver
 	dev-util/meson
-	dev-lang/faust
+	=dev-lang/faust-9999
 "
 RDEPEND="${CDEPEND}"
 DEPEND="${RDEPEND}"
