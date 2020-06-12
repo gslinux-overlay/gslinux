@@ -39,8 +39,8 @@ DEPEND="
 
 src_configure() {
 	local mycmakeargs=(
-		-DNOKDESUPPORT=$(!usex kde)
-		-DNOSECRETSUPPORT=$(!usex gnome)
+		-DNOKDESUPPORT=$(usex kde "false" "true")
+		-DNOSECRETSUPPORT=$(usex gnome "false" "true")
 		-DCMAKE_INSTALL_PREFIX=/usr
 		-DCMAKE_BUILD_TYPE=RELEASE
 	)
