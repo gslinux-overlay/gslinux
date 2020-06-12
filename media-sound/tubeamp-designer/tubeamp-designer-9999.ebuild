@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 meson
+inherit git-r3 meson xdg-utils
 
 DESCRIPTION="Standalone software guitar processor, editor of *.tapf profile files for tubeAmp (KPP) and guitar amp profiler"
 HOMEPAGE="https://github.com/olegkapitonov/tubeAmp-Designer"
@@ -29,7 +29,17 @@ DEPEND="${RDEPEND}"
 
 src_configure() {
 	local emesonargs=(
-		--prefix "${D}"/usr
+		--prefix /usr
 	)
 	meson_src_configure
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
 }
