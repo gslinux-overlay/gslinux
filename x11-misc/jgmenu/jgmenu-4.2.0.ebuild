@@ -19,11 +19,13 @@ DESCRIPTION="A small X11 menu"
 HOMEPAGE="https://github.com/johanmalm/jgmenu/wiki"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="-lxde -openbox"
+IUSE="gtk lxde openbox xfce"
 
 RDEPEND="
-	lxde? ( lxde-base/menu-cache dev-libs/glib )
+	lxde? ( lxde-base/menu-cache )
 	openbox? ( dev-libs/libxml2 )
+	xfce? ( xfce-base/xfce4-panel )
+	dev-libs/glib
 	x11-libs/libX11
 	x11-libs/libXrandr
 	x11-libs/cairo
@@ -31,15 +33,20 @@ RDEPEND="
 	gnome-base/librsvg"
 DEPEND="${RDEPEND}"
 
-src_compile() {
-	emake $(usex lxde "" "NOLX=1") all
+src_configure() {
+	local myconf=(
+		$(usex gtk '--with-gtktheme' '')
+		$(usex lxde '--with-lx' '')
+		$(usex xfce '--with-xfce4-panel-applet' '')
+	)
+
+	econf "${myconf[@]}"
 }
 
 src_install() {
 	emake \
 		DESTDIR="$D" \
 		prefix="/usr" \
-		$(usex lxde "" "NOLX=1") \
 		install
 	einstalldocs
 }
