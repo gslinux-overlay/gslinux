@@ -35,7 +35,6 @@ DEPEND="${RDEPEND}"
 
 src_configure() {
 	local myconf=(
-		--prefix=/usr
 		$(usex gtk '--with-gtktheme' '')
 		$(usex lxde '--with-lx' '')
 		$(usex xfce '--with-xfce4-panel-applet' '')
