@@ -55,5 +55,5 @@ src_install() {
 	insinto /etc
 	doins "${T}/aeolus.conf"
 
-	make_desktop_entry aeolus Aeolus "" "AudioVideo"
+	make_desktop_entry aeolus Aeolus "jack-keyboard" "AudioVideo"
 }
