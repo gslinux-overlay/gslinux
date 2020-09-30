@@ -1,9 +1,12 @@
---- a/plugin/Makefile.am	2018-04-14 17:57:38.552921640 +0200
-+++ b/plugin/Makefile.am	2018-04-15 21:20:16.237850856 +0200
-@@ -1052,8 +1052,7 @@
+--- a/plugin/Makefile.am	2020-10-01 02:12:32.311710000 +0300
++++ b/plugin/Makefile.am	2020-10-01 02:16:43.377721195 +0300
+@@ -104,8 +104,7 @@
  
  
  install-data-hook:
--	rm -f $(lv2plugindir)/drumgizmo.la
--	rm -f $(vstplugindir)/drumgizmo_vst.la
+-	rm -f $(DESTDIR)/$(lv2plugindir)/drumgizmo.la
+-	rm -f $(DESTDIR)/$(vstplugindir)/drumgizmo_vst.la
 +	true
+ 
+ 
+ EXTRA_DIST = \
