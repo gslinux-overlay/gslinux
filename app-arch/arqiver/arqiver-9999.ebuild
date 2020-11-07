@@ -3,13 +3,13 @@
 
 EAPI=7
 
-inherit qmake-utils xdg-utils
+inherit qmake-utils xdg-utils git-r3
 
 MY_P="${P/arqiver/Arqiver}"
 
-DESCRIPTION="Is a simple Qt5 archive manager as a front-end for libarchive (bsdtar), gzip and 7z"
+DESCRIPTION="Is a simple Qt5 archive manager as a front-end for libarchive, gzip and 7z"
 HOMEPAGE="https://github.com/tsujan/Arqiver"
-SRC_URI="https://codeload.github.com/tsujan/${PN}/tar.gz/V${PV} -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/tsujan/${PN}.git"
 
 LICENSE="GPL-3"
 SLOT="0"
