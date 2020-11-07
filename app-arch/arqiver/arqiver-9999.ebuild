@@ -5,8 +5,6 @@ EAPI=7
 
 inherit qmake-utils xdg-utils git-r3
 
-MY_P="${P/arqiver/Arqiver}"
-
 DESCRIPTION="Is a simple Qt5 archive manager as a front-end for libarchive, gzip and 7z"
 HOMEPAGE="https://github.com/tsujan/Arqiver"
 EGIT_REPO_URI="https://github.com/tsujan/${PN}.git"
@@ -21,8 +19,6 @@ RDEPEND="dev-qt/qtcore:5
 
 DEPEND="${RDEPEND}
 	dev-qt/linguist-tools:5"
-
-S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	eqmake5
