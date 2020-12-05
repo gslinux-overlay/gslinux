@@ -32,7 +32,7 @@ src_prepare() {
 }
 
 src_configure() {
-	false
+	cmake-utils_src_configure
 }
 
 pkg_postinst() {
