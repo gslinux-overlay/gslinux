@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils xdg-utils
+inherit cmake xdg-utils
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/iurie-sw/geonkick/archive/v${PV}.tar.gz  -> ${P}.tar.gz"
@@ -26,18 +26,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-src_prepare() {
-	false
-}
-
-src_configure() {
-	cmake-utils_src_configure
-}
-
-src_compile() {
-	emake
-}
 
 pkg_postinst() {
 	xdg_mimeinfo_database_update
