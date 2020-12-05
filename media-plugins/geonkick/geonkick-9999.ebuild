@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_prepare() {
-	cmake-utils_src_prepare
+	false
 }
 
 src_configure() {
@@ -36,7 +36,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake PREFIX="/usr"
+	emake
 }
 
 pkg_postinst() {
