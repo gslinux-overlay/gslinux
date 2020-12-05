@@ -27,6 +27,14 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_prepare() {
+	cmake-utils_src_prepare
+}
+
+src_configure() {
+	false
+}
+
 pkg_postinst() {
 	xdg_mimeinfo_database_update
 	xdg_desktop_database_update
