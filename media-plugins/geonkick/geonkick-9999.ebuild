@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake xdg-utils
+inherit cmake-utils xdg-utils
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/iurie-sw/geonkick/archive/v${PV}.tar.gz  -> ${P}.tar.gz"
