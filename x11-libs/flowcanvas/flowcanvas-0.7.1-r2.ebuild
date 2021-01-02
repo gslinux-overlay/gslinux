@@ -29,8 +29,6 @@ DEPEND="${RDEPEND}
 DOCS=( AUTHORS README ChangeLog )
 
 src_prepare() {
-	epatch "${FILESDIR}/ldconfig2.patch"
-	has_version '>=media-gfx/graphviz-2.34' && epatch "${FILESDIR}/gv234.patch"
 	append-cxxflags -std=c++11
 }
 
