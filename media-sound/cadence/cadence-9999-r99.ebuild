@@ -54,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	emake PREFIX="/usr" DESTDIR="${D}" install
+	emake PREFIX="/usr" DESTDIR="${D}" LIBDIR="$(get_libdir)" install
 
 	# Clean up stuff that shouldn't be installed
 	rm -rf "${D}/etc/X11/xinit/xinitrc.d/61cadence-session-inject"
