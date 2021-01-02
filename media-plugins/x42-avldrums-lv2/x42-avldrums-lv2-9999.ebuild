@@ -37,5 +37,5 @@ src_compile() {
 	emake
 }
 src_install() {
-	emake PREFIX="${D}/usr/$(get_libdir)" install
+	emake PREFIX="${D}/usr/$(get_libdir)/lv2" install
 }
