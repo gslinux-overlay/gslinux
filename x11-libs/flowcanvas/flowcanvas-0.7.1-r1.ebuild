@@ -6,7 +6,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE='threads(+)'
 
-inherit waf-utils python-any-r1 eutils flag-o-matic
+inherit waf-utils python-any-r1 eutils
 
 DESCRIPTION="Gtkmm/Gnomecanvasmm widget for boxes and lines environments"
 HOMEPAGE="http://wiki.drobilla.net/FlowCanvas"
@@ -31,7 +31,6 @@ DOCS=( AUTHORS README ChangeLog )
 src_prepare() {
 	epatch "${FILESDIR}/ldconfig2.patch"
 	has_version '>=media-gfx/graphviz-2.34' && epatch "${FILESDIR}/gv234.patch"
-	append-cxxflags -std=c++11
 }
 
 src_configure() {
