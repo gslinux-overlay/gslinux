@@ -32,16 +32,17 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_prepare() {
-    gunzip -f "${S}"/man/*.gz || die
-}
-
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
 	)
 		
     cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+	gunzip -f man/*.gz || die
 }
 
 pkg_postinst() {
