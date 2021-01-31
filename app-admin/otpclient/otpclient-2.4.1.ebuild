@@ -40,6 +40,12 @@ src_configure() {
     cmake-utils_src_configure
 }
 
+src_install() {
+    gunzip "${D}/man/otpclient-cli.1.gz"
+    gunzip "${D}/man/otpclient.1.gz"
+    default
+}
+
 pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_icon_cache_update
