@@ -32,6 +32,11 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_prepare() {
+    gunzip ${S}/man/otpclient-cli.1.gz
+    gunzip ${S}/man/otpclient.1.gz
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
