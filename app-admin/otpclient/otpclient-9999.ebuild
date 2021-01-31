@@ -33,7 +33,6 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_prepare() {
-    default
     gunzip -f "${S}"/man/*.gz || die
 }
 
