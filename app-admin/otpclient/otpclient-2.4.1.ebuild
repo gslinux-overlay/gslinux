@@ -32,6 +32,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+
+
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
@@ -41,9 +43,9 @@ src_configure() {
 }
 
 src_install() {
+    emake DESTDIR="${D}" install
     gunzip "${D}/man/otpclient-cli.1.gz"
     gunzip "${D}/man/otpclient.1.gz"
-    default
 }
 
 pkg_postinst() {
