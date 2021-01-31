@@ -43,7 +43,6 @@ src_configure() {
 }
 
 src_install() {
-    emake DESTDIR="${D}" install
     gunzip "${D}/man/otpclient-cli.1.gz"
     gunzip "${D}/man/otpclient.1.gz"
 }
