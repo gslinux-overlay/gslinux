@@ -32,18 +32,12 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-
-
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
 	)
 		
     cmake-utils_src_configure
-}
-
-src_install() {
-    default
 }
 
 pkg_postinst() {
