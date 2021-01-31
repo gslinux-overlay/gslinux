@@ -8,6 +8,7 @@ inherit cmake-utils
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/paolostivanin/OTPClient/archive/v${PV}.tar.gz  -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
+	S=${WORKDIR}/OTPClient-${PV}
 else
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/paolostivanin/OTPClient.git"
