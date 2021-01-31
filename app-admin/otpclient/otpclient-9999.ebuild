@@ -42,7 +42,7 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
-	gunzip -f man/*.gz || die
+	gunzip -f "${ED}"/usr/share/man/man1/*.gz || die
 }
 
 pkg_postinst() {
