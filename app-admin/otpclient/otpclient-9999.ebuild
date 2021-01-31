@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake-utils xdg-utils
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/paolostivanin/OTPClient/archive/v${PV}.tar.gz  -> ${P}.tar.gz"
@@ -33,8 +33,8 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_prepare() {
-    gunzip ${S}/man/otpclient-cli.1.gz
-    gunzip ${S}/man/otpclient.1.gz
+    gunzip man/otpclient-cli.1.gz
+    gunzip man/otpclient.1.gz
 }
 
 src_configure() {
@@ -43,4 +43,16 @@ src_configure() {
 	)
 		
     cmake-utils_src_configure
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
+	xdg_mimeinfo_database_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
+	xdg_mimeinfo_database_update
 }
