@@ -20,7 +20,7 @@ SLOT="0"
 
 DEPEND="
         dev-libs/libbaseencode
-        dev-libs/libgcrypt-compat
+        dev-libs/libgcrypt
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
