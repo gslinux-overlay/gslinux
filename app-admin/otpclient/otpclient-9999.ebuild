@@ -44,7 +44,6 @@ src_configure() {
 
 src_install() {
     default
-    gunzip -f man/*.gz || die
 }
 
 pkg_postinst() {
