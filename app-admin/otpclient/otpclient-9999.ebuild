@@ -44,8 +44,7 @@ src_configure() {
 
 src_install() {
     default
-    gunzip "${ED}"/usr/share/man/man1/otpclient-cli.1.gz || die
-    gunzip "${ED}"/usr/share/man/man1/otpclient.1.gz || die
+    gunzip -f man/*.gz || die
 }
 
 pkg_postinst() {
