@@ -3,11 +3,20 @@
 
 EAPI=7
 
-inherit qmake-utils xdg-utils git-r3
+inherit qmake-utils xdg-utils
+
+if [[ ${PV} != *9999* ]]; then
+	SRC_URI="https://codeload.github.com/tsujan/${PN}/tar.gz/V${PV} -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+	MY_P="${P/featherpad/FeatherPad}"
+	S="${WORKDIR}/${MY_P}"
+else
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/tsujan/${PN}.git"
+fi
 
 DESCRIPTION="Lightweight Qt5 Plain-Text Editor for Linux"
 HOMEPAGE="https://github.com/tsujan/FeatherPad"
-EGIT_REPO_URI="https://github.com/tsujan/${PN}.git"
 
 LICENSE="GPL-3"
 SLOT="0"
