@@ -3,7 +3,7 @@ GSLinux Overlay (Gentoo and Source-based Linux Professional Audio Workstation)
 
 To add this overlay in the our Gentoo based system make file gslinux.conf in /etc/portage/repos.conf folder
 
->[gslinux]
+>[gslinux]\n
 >
 >location = /var/db/repos/gslinux
 >
