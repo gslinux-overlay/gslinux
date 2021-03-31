@@ -37,8 +37,7 @@ src_configure()
 src_install() {
 	emake DESTDIR="${D}" install
 
-	rm -rf "${D}/usr/share/man/man1/nsm-data.1.gz"
-	gunzip -f "${D}"/usr/share/man/man1/agordejo.1.gz || die
+	gunzip -f "${D}"/usr/share/man/man1/*.gz || die
 }
 
 pkg_postinst() {
