@@ -14,7 +14,7 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="https://git.laborejo.org/lss/${PN}.git"
 else
 	SRC_URI="https://www.laborejo.org/downloads/${P}.tar.gz"
-	KEYWORDS="amd64 x86"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-2"
