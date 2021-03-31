@@ -26,8 +26,6 @@ RDEPEND="virtual/jack
 	media-libs/libsmf"
 DEPEND="${RDEPEND}"
 
-PATCHES=( "${FILESDIR}/dg-sandbox.patch" )
-
 src_configure()
 {
 if [[ ${PV} == *9999* ]]; then
