@@ -24,7 +24,7 @@ RDEPEND="
 	sys-libs/glibc
 	dev-python/PyQt5
 	media-fonts/dejavu
-	media-sound/nsmd[-gui]
+	media-sound/new-session-manager[-gui]
 	sys-apps/grep
 "
 DEPEND="${RDEPEND}"
