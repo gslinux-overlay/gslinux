@@ -34,6 +34,13 @@ src_configure()
 	econf --prefix=/usr
 }
 
+src_install() {
+	emake DESTDIR="${D}" install
+
+	rm -rf "${D}/usr/share/man/man1/nsm-data.1.gz"
+	gunzip -f "${D}"/usr/share/man/man1/agordejo.1.gz || die
+}
+
 pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_icon_cache_update
