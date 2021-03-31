@@ -37,6 +37,7 @@ src_configure()
 src_install() {
 	emake DESTDIR="${D}" install
 
+	rm -rf "{D}/usr/share/doc/agordejo/*"
 	rm -rf "{D}/usr/share/doc/agordejo"
 	gunzip -f "${D}"/usr/share/man/man1/*.gz || die
 }
