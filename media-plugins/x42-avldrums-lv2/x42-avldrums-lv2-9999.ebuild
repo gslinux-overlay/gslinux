@@ -1,10 +1,8 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-# The order is important here! Both, cmake-utils and xdg define src_prepare.
-# We need the one from cmake-utils
 inherit git-r3
 
 DESCRIPTION="Dedicated AVLDrumkits LV2 Plugin"
@@ -13,8 +11,7 @@ EGIT_REPO_URI="https://github.com/x42/avldrums.lv2.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-
-IUSE=""
+RESTRICT="mirror"
 
 RDEPEND="
 	media-libs/lv2
@@ -24,18 +21,9 @@ RDEPEND="
 	virtual/opengl
 	media-libs/libsamplerate
 "
-
-src_prepare() {
-	default
-}
-
-src_configure() {
-	true
-}
-
 src_compile() {
 	emake
 }
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" LIBDIR="$(get_libdir)" install
+	emake DESTDIR="${D}" PREFIX="/usr" LV2DIR="/usr/$(get_libdir)/lv2" install
 }
