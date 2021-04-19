@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit autotools
+
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/x42/xjadeo/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
