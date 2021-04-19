@@ -20,8 +20,14 @@ SLOT="0"
 RDEPEND="media-video/ffmpeg
 	x11-libs/libX11
 	media-libs/libltc
-	media-libs/glu"
+	media-libs/glu
+	virtual/jack"
 
 DEPEND="${RDEPEND}
 	media-libs/glu
 	x11-libs/libXv"
+
+src_install() {
+	einstalldocs
+	emake INSTALL_ROOT="${ED}" install
+}
