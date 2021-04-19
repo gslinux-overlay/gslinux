@@ -34,8 +34,3 @@ src_prepare() {
 
 	eautoreconf
 }
-
-src_install() {
-	einstalldocs
-	emake INSTALL_ROOT="${ED}" install
-}
