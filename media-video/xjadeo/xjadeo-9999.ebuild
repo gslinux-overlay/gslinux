@@ -27,6 +27,12 @@ DEPEND="${RDEPEND}
 	media-libs/glu
 	x11-libs/libXv"
 
+src_prepare() {
+	default
+
+	eautoreconf
+}
+
 src_install() {
 	einstalldocs
 	emake INSTALL_ROOT="${ED}" install
