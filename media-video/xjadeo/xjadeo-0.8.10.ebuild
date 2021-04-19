@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 	x11-libs/libXv"
 
 src_prepare() {
-	default
-
 	eautoreconf
 }
 
