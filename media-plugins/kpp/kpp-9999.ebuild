@@ -45,8 +45,6 @@ DEPEND="${RDEPEND}"
 
 src_configure() {
 	local emesonargs=(
-        --reconfigure
-        --prefix /usr
         -Dladspadir=/usr/$(get_libdir)/ladspa
         -Dlv2dir=/usr/$(get_libdir)/lv2
     )
