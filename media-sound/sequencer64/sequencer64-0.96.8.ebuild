@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit eutils
+inherit eutils xdg-utils
 
 DESCRIPTION="Reboot of seq24, a minimal loop based midi sequencer"
 HOMEPAGE="https://github.com/ahlstromcj/sequencer64"
@@ -35,6 +35,10 @@ RDEPEND="
 	!qt5? ( dev-cpp/gtkmm:2.4 )"
 DEPEND="${RDEPEND}"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-configure-add-missing-qtwidgets-check.patch"
+)
+
 src_prepare()
 {
 	default
@@ -60,5 +64,15 @@ src_install()
 	emake DESTDIR="${D}" install
 
 	newicon resources/pixmaps/seq64.xpm sequencer64.xpm
-	make_desktop_entry seq64 sequencer64 sequencer64
+	make_desktop_entry qseq64 sequencer64 sequencer64
+}
+
+pkg_postinst() {
+	xdg_icon_cache_update
+	xdg_desktop_database_update
+}
+
+pkg_postrm() {
+	xdg_icon_cache_update
+	xdg_desktop_database_update
 }
