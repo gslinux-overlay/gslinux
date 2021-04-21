@@ -44,6 +44,11 @@ RDEPEND="${CDEPEND}"
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	local emesonargs=()
+	local emesonargs=(
+        --reconfigure
+        --prefix /usr
+        -Dladspadir=/usr/$(get_libdir)/ladspa
+        -Dlv2dir=/usr/$(get_libdir)/lv2
+    )
 	meson_src_configure
 }
