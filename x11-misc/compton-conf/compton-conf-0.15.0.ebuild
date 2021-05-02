@@ -39,10 +39,6 @@ DEPEND="${RDEPEND}
 	sys-apps/sed
 "
 
-src_configure() {
-    sed -i "s/0.7.0/0.6.0/" CMakeLists.txt
-}
-
 pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_icon_cache_update
