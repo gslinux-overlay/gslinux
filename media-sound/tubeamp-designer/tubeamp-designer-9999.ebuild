@@ -22,7 +22,7 @@ CDEPEND="
 	media-libs/zita-resampler
 	media-libs/zita-convolver
 	dev-util/meson
-	=dev-lang/faust-9999
+	dev-lang/faust
 "
 RDEPEND="${CDEPEND}"
 DEPEND="${RDEPEND}"
