@@ -10,7 +10,6 @@ HOMEPAGE="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack"
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
     EGIT_REPO_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack.git"
-    KEYWORDS=""
 else
 	SRC_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
