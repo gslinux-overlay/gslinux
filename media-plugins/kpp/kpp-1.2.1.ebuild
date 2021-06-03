@@ -14,6 +14,7 @@ if [[ ${PV} == *9999 ]]; then
 else
 	SRC_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
+	S="${WORKDIR}/Kapitonov-Plugins-Pack-${PV}"
 fi
 LICENSE="GPL-2"
 SLOT="0"
