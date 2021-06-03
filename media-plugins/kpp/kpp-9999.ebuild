@@ -3,12 +3,19 @@
 
 EAPI=7
 
-inherit git-r3 meson
+inherit meson
 
 DESCRIPTION="Kapitonov-Plugins-Pack - set of plugins for guitar sound processing"
 HOMEPAGE="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack"
-EGIT_REPO_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack.git"
-KEYWORDS=""
+if [[ ${PV} == *9999 ]]; then
+	inherit git-r3
+    EGIT_REPO_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack.git"
+    KEYWORDS=""
+else
+	SRC_URI="https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+	S="${WORKDIR}/Kapitonov-Plugins-Pack-${PV}"
+fi
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
@@ -38,7 +45,7 @@ CDEPEND="
 	media-libs/zita-resampler
 	media-libs/zita-convolver
 	dev-util/meson
-	dev-lang/faust
+	=dev-lang/faust-9999
 "
 RDEPEND="${CDEPEND}"
 DEPEND="${RDEPEND}"
