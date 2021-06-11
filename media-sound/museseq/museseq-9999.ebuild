@@ -13,10 +13,14 @@ HOMEPAGE="http://muse-sequencer.org/"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/muse-sequencer/muse.git"
+	S=${WORKDIR}/muse/src
+	PATCHES=("${FILESDIR}"/museseq-cmake-rpath-${PV}.patch)
 else
 	
 	SRC_URI="https://github.com/muse-sequencer/muse/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
+	S=${WORKDIR}/muse-${PV}/src
+	PATCHES=("${FILESDIR}"/museseq-cmake-rpath.patch)
 fi
 
 LICENSE="GPL-2"
@@ -58,8 +62,6 @@ COMMON_DEPEND="
 BDEPEND="
 	dev-qt/linguist-tools:5
 "
-
-S=${WORKDIR}/${P}/src
 
 PATCHES=("${FILESDIR}"/museseq-cmake-rpath.patch)
 
