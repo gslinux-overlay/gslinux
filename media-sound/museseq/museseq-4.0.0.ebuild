@@ -13,7 +13,7 @@ HOMEPAGE="http://muse-sequencer.org/"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/muse-sequencer/muse.git"
-	S="${WORKDIR}/${PV}/src"
+	S="${WORKDIR}/muse4/src"
 	PATCHES=("${FILESDIR}"/museseq-cmake-rpath-${PV}.patch)
 else
     SRC_URI="https://github.com/muse-sequencer/muse/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
