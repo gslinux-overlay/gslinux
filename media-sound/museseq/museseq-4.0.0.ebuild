@@ -13,13 +13,12 @@ HOMEPAGE="http://muse-sequencer.org/"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/muse-sequencer/muse.git"
-	S="${WORKDIR}/${P}/src"
+	S="${WORKDIR}/${PV}/src"
 	PATCHES=("${FILESDIR}"/museseq-cmake-rpath-${PV}.patch)
 else
-	
-	SRC_URI="https://github.com/muse-sequencer/muse/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+    SRC_URI="https://github.com/muse-sequencer/muse/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
-	S="${WORKDIR}/muse-${P}/src"
+	S="${WORKDIR}/muse-${PV}/src"
 	PATCHES=("${FILESDIR}"/museseq-cmake-rpath.patch)
 fi
 
@@ -74,7 +73,7 @@ src_configure() {
 		-DENABLE_LASH=$(usex lash ON OFF)
 		-DENABLE_DSSI=$(usex dssi ON OFF)
 		-DENABLE_LV2=$(usex lv2 ON OFF)
-		-DENABLE_LV2_GTK2=$(usex lv2 ON OFF)
+		-DENABLE_LV2_GTK2=OFF
 		-DENABLE_OSC=$(usex osc ON OFF)
 		-DENABLE_PYTHON=$(usex python ON OFF)
 		-DENABLE_RTAUDIO=$(usex realtime ON OFF)
