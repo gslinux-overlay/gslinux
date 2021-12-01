@@ -42,7 +42,7 @@ src_prepare() {
 	default
 
 	sed -i \
-		-e "s:/heroic:/opt/heroic/heroic:g"
+		-e "s:/${PN}:/opt/heroic/heroic:g"
 }
 
 src_install() {
