@@ -51,7 +51,7 @@ src_install() {
 
 	insinto /opt
 	doins -r .
-	mv ../image/opt/${P} ../image/opt/${PN}
+	mv ../image/opt/${P}-alpha ../image/opt/${PN}
 	fperms +x /opt/${PN}/${PN}
 	fperms +x /opt/${PN}/resources/app.asar.unpacked/build/bin/linux/legendary
 	dosym ../../opt/${PN}/${PN} usr/bin/${PN}
