@@ -17,7 +17,6 @@ else
 fi
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
 
 CDEPEND="
 	virtual/jack
