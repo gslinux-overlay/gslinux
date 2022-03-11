@@ -1,5 +1,5 @@
---- src/translation.cc	2020-11-22 13:30:31.000000000 +0300
-+++ src/translation.cc	2022-03-12 00:35:50.695064691 +0300
+--- a/src/translation.cc	2020-11-22 13:30:31.000000000 +0300
++++ b/src/translation.cc	2022-03-12 00:35:50.695064691 +0300
 @@ -43,7 +43,7 @@
  
  namespace
@@ -124,8 +124,8 @@
  {
  	std::lock_guard<std::mutex>(singleton.mutex);
  	if(singleton.refcnt == 0)
---- src/translation.h	2020-11-22 13:30:31.000000000 +0300
-+++ src/translation.h	2022-03-12 00:36:02.688432307 +0300
+--- a/src/translation.h	2020-11-22 13:30:31.000000000 +0300
++++ b/src/translation.h	2022-03-12 00:36:02.688432307 +0300
 @@ -32,7 +32,7 @@
 
  #include <memory>
