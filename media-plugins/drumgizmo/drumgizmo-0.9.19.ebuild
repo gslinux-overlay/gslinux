@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -11,7 +11,7 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="http://git.drumgizmo.org/drumgizmo.git"
 else
 	SRC_URI="http://www.drumgizmo.org/releases/${P}/${P}.tar.gz"
-	KEYWORDS="amd64 x86"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-2"
@@ -26,10 +26,17 @@ RDEPEND="virtual/jack
 	media-libs/libsmf"
 DEPEND="${RDEPEND}"
 
+PATCHES="${FILESDIR}/${P}.patch"
+
 src_configure()
 {
 if [[ ${PV} == *9999* ]]; then
     eautoreconf
 fi
-	econf --enable-lv2
+	local myeconfargs=(
+		--prefix="${EPREFIX}"/usr
+		--libdir="${EPREFIX}/usr/$(get_libdir)"
+		--enable-lv2
+		)
+	econf "${myeconfargs[@]}"
 }
