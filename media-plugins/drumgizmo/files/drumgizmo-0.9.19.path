@@ -1,6 +1,5 @@
-diff -Naru drumgizmo-0.9.19.orig/src/translation.cc drumgizmo-0.9.19/src/translation.cc
---- drumgizmo-0.9.19.orig/src/translation.cc	2020-11-22 13:30:31.000000000 +0300
-+++ drumgizmo-0.9.19/src/translation.cc	2022-03-12 00:35:50.695064691 +0300
+--- src/translation.cc	2020-11-22 13:30:31.000000000 +0300
++++ src/translation.cc	2022-03-12 00:35:50.695064691 +0300
 @@ -43,7 +43,7 @@
  
  namespace
@@ -125,9 +124,8 @@ diff -Naru drumgizmo-0.9.19.orig/src/translation.cc drumgizmo-0.9.19/src/transla
  {
  	std::lock_guard<std::mutex>(singleton.mutex);
  	if(singleton.refcnt == 0)
-diff -Naru drumgizmo-0.9.19.orig/src/translation.h drumgizmo-0.9.19/src/translation.h
---- drumgizmo-0.9.19.orig/src/translation.h	2020-11-22 13:30:31.000000000 +0300
-+++ drumgizmo-0.9.19/src/translation.h	2022-03-12 00:36:02.688432307 +0300
+--- src/translation.h	2020-11-22 13:30:31.000000000 +0300
++++ src/translation.h	2022-03-12 00:36:02.688432307 +0300
 @@ -32,7 +32,7 @@
  
  #include <memory>
