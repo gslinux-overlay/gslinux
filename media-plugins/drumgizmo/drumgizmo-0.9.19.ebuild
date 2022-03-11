@@ -26,7 +26,7 @@ RDEPEND="virtual/jack
 	media-libs/libsmf"
 DEPEND="${RDEPEND}"
 
-PATCHES="${FILESDIR}/${P}.patch"
+PATCHES="${FILESDIR}/${PN}-0.9.19.patch"
 
 src_configure()
 {
