@@ -30,10 +30,6 @@ RDEPEND="
 
 distutils_enable_tests pytest
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-bluetooth-evdev.patch
-)
-
 pkg_setup() {
 	local CONFIG_CHECK="~INPUT_UINPUT"
 
