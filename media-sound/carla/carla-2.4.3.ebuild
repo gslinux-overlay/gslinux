@@ -54,8 +54,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-PATCHES=( "${FILESDIR}/types.patch" )
-
 src_prepare() {
 	sed -i -e "3s|=.*|=${PYTHON}|; 4,7d" \
 		data/carla \
