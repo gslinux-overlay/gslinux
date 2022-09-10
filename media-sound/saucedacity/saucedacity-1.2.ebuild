@@ -80,7 +80,7 @@ src_configure() {
 	# * options listed in the order that cmake-gui lists them
 	local mycmakeargs=(
 #		--disable-dynamic-loading
-		-Dsaucedacity_conan_enabled=Off
+#		-Dsaucedacity_conan_enabled=Off
 		-Dsaucedacity_lib_preference=system
 		-Dsaucedacity_use_expat=system
 		-Dsaucedacity_use_ffmpeg=$(usex ffmpeg loaded off)
