@@ -80,7 +80,7 @@ src_configure() {
 	# * options listed in the order that cmake-gui lists them
 	local mycmakeargs=(
 #		--disable-dynamic-loading
-#		-Dsaucedacity_conan_enabled=Off
+		-Dsaucedacity_conan_enabled=Off
 		-Dsaucedacity_lib_preference=system
 		-Dsaucedacity_use_expat=system
 		-Dsaucedacity_use_ffmpeg=$(usex ffmpeg loaded off)
@@ -108,7 +108,7 @@ src_configure() {
 		-Dsaucedacity_use_vamp=$(usex vamp system off)
 		-Dsaucedacity_use_vorbis=$(usex vorbis system off)
 		-Dsaucedacity_use_vst=$(usex vst)
-		-Dsaucedacity_use_wxwidgets=local # required, saucedacity needs wx >=3.1, Gentoo ships up to 3.0.5 currently
+		-Dsaucedacity_use_wxwidgets=system # required, saucedacity needs wx >=3.1, Gentoo ships up to 3.0.5 currently
 	)
 
 	cmake_src_configure
