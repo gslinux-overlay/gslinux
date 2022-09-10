@@ -11,7 +11,8 @@ inherit git-r3 cmake python-single-r1 wxwidgets xdg
 DESCRIPTION="easy-to-use, cross-platform multi-track audio editor/recorder"
 HOMEPAGE="https://tenacityaudio.org/"
 EGIT_REPO_URI="https://github.com/tenacityteam/tenacity.git"
-EGIT_SUBMODULES=()
+EGIT_SUBMODULES=( '*' '-*vcpkg*' )
+CMAKE_BUILD_TYPE="Release"
 # GPL-2: Tenacity code
 # CC-BY-3.0: Tenacity Documentation
 # CC-BY-4.0: Audacity Logo
