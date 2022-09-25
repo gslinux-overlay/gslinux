@@ -39,5 +39,4 @@ my_src_compile() {
 src_install() {
 	cp "${BUILD_DIR}"/kristall . || die
 	emake -o kristall DESTDIR="${D}" INSTALL="install -D" PREFIX="${EPREFIX}/usr" install
-	einstalldocs
 }
