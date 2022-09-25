@@ -14,7 +14,7 @@ if [ "${PV}" == "9999" ]; then
 else
 	SRC_URI="https://github.com/MasterQ32/${PN}/archive/V${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
-	PATCHES=( "${FILESDIR}/${PN}-0.3_add_flags.patch" )
+#	PATCHES=( "${FILESDIR}/${PN}-0.3_add_flags.patch" )
 fi
 
 LICENSE="GPL-3"
