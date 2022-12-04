@@ -5,7 +5,7 @@ EAPI=8
 
 KFMIN=5.77.0
 QTMIN=5.15.0
-inherit ecm
+inherit ecm gear.kde.org
 
 DESCRIPTION="Mastodon client for Plasma and Plasma Mobile"
 HOMEPAGE="https://invent.kde.org/network/tokodon"
@@ -27,7 +27,7 @@ RDEPEND="
 	>=kde-frameworks/kdbusaddons-${KFMIN}:5
 	>=kde-frameworks/ki18n-${KFMIN}:5
 	>=kde-frameworks/kirigami-${KFMIN}:5
-	>=kde-frameworks/kirigami-addons-0.5:5
+	>=kde-frameworks/kirigami-addons-0.6:5
 	>=kde-frameworks/kitemmodels-${KFMIN}:5
 	>=kde-frameworks/knotifications-${KFMIN}:5
 	>=kde-frameworks/kwindowsystem-${KFMIN}:5
@@ -38,3 +38,7 @@ DEPEND="${RDEPEND}
 	>=dev-qt/qtmultimedia-${QTMIN}:5
 	>=dev-qt/qtsvg-${QTMIN}:5
 "
+
+src_configure() {
+	ecm_src_configure
+}
