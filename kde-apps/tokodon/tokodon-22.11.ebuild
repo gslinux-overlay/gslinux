@@ -27,7 +27,7 @@ RDEPEND="
 	>=kde-frameworks/kdbusaddons-${KFMIN}:5
 	>=kde-frameworks/ki18n-${KFMIN}:5
 	>=kde-frameworks/kirigami-${KFMIN}:5
-	>=kde-frameworks/kirigami-addons-${KFMIN}:5
+	kde-frameworks/kirigami-addons
 	>=kde-frameworks/kitemmodels-${KFMIN}:5
 	>=kde-frameworks/knotifications-${KFMIN}:5
 	>=kde-frameworks/kwindowsystem-${KFMIN}:5
