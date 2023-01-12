@@ -23,7 +23,7 @@ K_BRANCH_ID="${KV_MAJOR}.${KV_MINOR}"
 LQX_URI="https://github.com/zen-kernel/zen-kernel/releases/download/v${K_BRANCH_ID}.${KV_PATCH}-lqx${LQX_PATCHSET}/v${K_BRANCH_ID}.${KV_PATCH}-lqx${LQX_PATCHSET}.patch.xz"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${LQX_URI}"
 
-KV_FULL="${PVR/_p/}"
+KV_FULL="${PVR/_p/-lqx}"
 S="${WORKDIR}/linux-${KV_FULL}"
 
 UNIPATCH_LIST="${DISTDIR}/v${K_BRANCH_ID}.${KV_PATCH}-lqx${LQX_PATCHSET}.patch.xz"
