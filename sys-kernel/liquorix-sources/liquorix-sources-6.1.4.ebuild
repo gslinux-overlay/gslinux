@@ -27,6 +27,14 @@ UNIPATCH_STRICTORDER="yes"
 K_EXTRAEINFO="For more info on liquorix-sources, and for how to report problems, see: \
 ${HOMEPAGE}, also go to #zen-sources on oftc"
 
+src_prepare() {
+	default
+
+	sed \
+		"s/default PREEMPT_NONE/default PREEMPT_RT/g" \
+		-i "${S}/kernel/Kconfig.preempt" || die "sed failed"
+}
+
 pkg_setup() {
 	ewarn
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
