@@ -20,8 +20,8 @@ IUSE=""
 DESCRIPTION="The Zen Kernel Live Sources"
 
 K_BRANCH_ID="${KV_MAJOR}.${KV_MINOR}"
-ZEN_URI="https://github.com/zen-kernel/zen-kernel/archive/refs/tags/v${K_BRANCH_ID}-zen${ZEN_PATCHSET}.tar.gz"
-SRC_URI="${ZEN_URI} ${GENPATCHES_URI} ${ARCH_URI}"
+KERNEL_URI="https://github.com/zen-kernel/zen-kernel/archive/refs/tags/v${K_BRANCH_ID}-zen${ZEN_PATCHSET}.tar.gz"
+SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 KV_FULL="${PVR/_p/-zen}"
 S="${WORKDIR}/linux-${KV_FULL}"
