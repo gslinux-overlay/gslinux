@@ -20,14 +20,22 @@ IUSE=""
 DESCRIPTION="The Zen Kernel Live Sources"
 
 K_BRANCH_ID="${KV_MAJOR}.${KV_MINOR}"
-KERNEL_URI="https://github.com/zen-kernel/zen-kernel/archive/refs/tags/v${K_BRANCH_ID}-zen${ZEN_PATCHSET}.tar.gz"
-SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
+ZEN_URI="https://github.com/zen-kernel/zen-kernel/archive/refs/tags/v${K_BRANCH_ID}-zen${ZEN_PATCHSET}.tar.gz"
+SRC_URI="${ZEN_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 KV_FULL="${PVR/_p/-zen}"
 S="${WORKDIR}/linux-${KV_FULL}"
 
 K_EXTRAEINFO="For more info on zen-sources, and for how to report problems, see: \
 ${HOMEPAGE}, also go to #zen-sources on oftc"
+
+src_unpack() {
+	# Since the Codeberg-hosted pf-sources include full kernel sources, we need to manually override
+	# the src_unpack phase because kernel-2_src_unpack() does a lot of unwanted magic here.
+	unpack ${A}
+
+	mv zen-kernel-${K_BRANCH_ID}-zen${ZEN_PATCHSET} linux-${K_BRANCH_ID}.${KV_PATCH}-zen${ZEN_PATCHSET} || die "Failed to move source directory"
+}
 
 pkg_setup() {
 	ewarn
