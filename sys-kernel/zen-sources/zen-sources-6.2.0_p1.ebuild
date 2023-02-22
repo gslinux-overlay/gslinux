@@ -37,6 +37,19 @@ src_unpack() {
 	mv zen-kernel-${K_BRANCH_ID}-zen${ZEN_PATCHSET} linux-${K_BRANCH_ID}.${KV_PATCH}-zen${ZEN_PATCHSET} || die "Failed to move source directory"
 }
 
+src_prepare() {
+	# When genpatches basic version is bumped, it also includes vanilla linux updates. Those are
+	# already in the -pf patch set, so need to remove the vanilla linux patches to avoid conflicts.
+	if [[ ${K_GENPATCHES_VER} -ne 1 ]]; then
+		find "${WORKDIR}"/ -type f -name '10*linux*patch' -delete ||
+			die "Failed to delete vanilla linux patches in src_prepare."
+	fi
+
+	# kernel-2_src_prepare doesn't apply PATCHES(). Chosen genpatches are also applied here.
+	eapply "${WORKDIR}"/*.patch
+	default
+}
+
 pkg_setup() {
 	ewarn
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
