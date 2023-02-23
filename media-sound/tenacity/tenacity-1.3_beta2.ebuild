@@ -27,6 +27,7 @@ RDEPEND="dev-db/sqlite:3
 	dev-libs/expat
 	dev-libs/glib:2
 	media-libs/libsndfile
+	media-libs/portaudio
 	media-libs/soxr
 	media-sound/lame
 	sys-libs/zlib:=
