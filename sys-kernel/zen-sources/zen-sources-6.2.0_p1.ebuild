@@ -36,6 +36,8 @@ src_unpack() {
 	unpack ${A}
 
 	mv zen-kernel-${K_BRANCH_ID}-zen${ZEN_PATCHSET} linux-${K_BRANCH_ID}.${KV_PATCH}-zen${ZEN_PATCHSET} || die "Failed to move source directory"
+
+#	mv zen-kernel-${K_BRANCH_ID}.${KV_PATCH}-zen${ZEN_PATCHSET} linux-${K_BRANCH_ID}.${KV_PATCH}-zen${ZEN_PATCHSET} || die "Failed to move source directory"
 }
 
 src_prepare() {
