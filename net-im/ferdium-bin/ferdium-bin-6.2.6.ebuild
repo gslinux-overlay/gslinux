@@ -59,15 +59,15 @@ src_install() {
 	newmenu usr/share/applications/${_PN}.desktop ${PN}.desktop
 
 	for _size in 16 24 32 48 64 96 128 256 512; do
-		newicon -s ${_size} "usr/share/icons/hicolor/${_size}x${_size}/apps/${_PN}.png" "${PN}.png"
+		newicon -s ${_size} "usr/share/icons/hicolor/${_size}x${_size}/apps/${_PN}.png" "${_PN}.png"
 	done
 
 	# desktop eclass does not support installing 1024x1024 icons
 	insinto /usr/share/icons/hicolor/1024x1024/apps
-	newins "usr/share/icons/hicolor/1024x1024/apps/${_PN}.png" "${PN}.png"
+	newins "usr/share/icons/hicolor/1024x1024/apps/${_PN}.png" "${_PN}.png"
 
 	# Installing 128x128 icon in /usr/share/pixmaps for legacy DEs
-	newicon "usr/share/icons/hicolor/128x128/apps/${_PN}.png" "${PN}.png"
+	newicon "usr/share/icons/hicolor/128x128/apps/${_PN}.png" "${_PN}.png"
 
 	insinto /usr/share/licenses/${PN}
 	for _license in 'LICENSE.electron.txt' 'LICENSES.chromium.html'; do
