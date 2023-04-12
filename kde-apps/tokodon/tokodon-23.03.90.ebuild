@@ -17,7 +17,7 @@ SRC_URI="https://invent.kde.org/network/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.
 LICENSE="|| ( GPL-2 GPL-3 ) AGPL-3+ CC-BY-SA-4.0 CC0-1.0 GPL-2+ GPL-3 GPL-3+ LGPL-2+ LGPL-2.1+ MIT"
 SLOT="5"
 KEYWORDS="~amd64"
-
+S="${PN}-v${PV}"
 DEPEND="
 	>=dev-libs/kirigami-addons-0.6:5
 	dev-libs/qtkeychain[qt5(+)]
