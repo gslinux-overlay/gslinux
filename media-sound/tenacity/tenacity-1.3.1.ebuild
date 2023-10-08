@@ -63,11 +63,11 @@ BDEPEND="
 
 DOCS=( LICENSE.txt README.md )
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-cursors-header.patch
-	"${FILESDIR}"/${PN}-install-nyquist.patch
-	"${FILESDIR}"/${PN}-drop-files.patch
-)
+#PATCHES=(
+#	"${FILESDIR}"/${PN}-cursors-header.patch
+#	"${FILESDIR}"/${PN}-install-nyquist.patch
+#	"${FILESDIR}"/${PN}-drop-files.patch
+#)
 
 src_configure() {
 	setup-wxwidgets
