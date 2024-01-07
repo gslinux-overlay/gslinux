@@ -37,5 +37,9 @@ src_prepare() {
 src_configure() {
 	econf \
 		--prefix=/usr \
-		--disable-portmidi
+		--disable-portmidi \
+		--enable-xinerama \
+		--sysconfdir=/etc/xjadeo \
+		--enable-contrib \
+		--enable-embed-font
 }
