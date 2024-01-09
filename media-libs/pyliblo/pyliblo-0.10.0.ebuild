@@ -1,31 +1,28 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=8
+EAPI=7
 
-PYTHON_COMPAT=( python3_{9,10,11} )
+PYTHON_COMPAT=( python3_{10,11,12} )
 inherit distutils-r1
 
-DESCRIPTION="Python bindings for the liblo OSC library"
-HOMEPAGE="http://das.nasophon.de/pyliblo"
+DESCRIPTION="A Python wrapper for the liblo OSC library"
+HOMEPAGE="https://github.com/dsacre/pyliblo"
 
-if [[ ${PV} == 9999 ]]
-then
+if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/dsacre/${PN}"
+	EGIT_REPO_URI="https://github.com/dsacre/pyliblo.git"
 else
-	SRC_URI="http://das.nasophon.de/download/${P}.tar.gz"
-	KEYWORDS="~amd64"
+	SRC_URI="https://github.com/dsacre/pyliblo/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
 fi
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1+"
 SLOT="0"
+
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-RDEPEND="
-	${PYTHON_DEPS}
-	media-libs/liblo
-"
-DEPEND="${RDEPEND}"
-
-distutils_enable_tests setup.py
+RDEPEND=">=media-libs/liblo-0.27
+	${PYTHON_DEPS}"
+DEPEND="${RDEPEND}
+	dev-python/cython[${PYTHON_USEDEP}]"
