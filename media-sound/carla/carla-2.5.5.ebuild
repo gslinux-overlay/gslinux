@@ -80,9 +80,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" "${myemakeargs[@]}" install
-	if ! use osc; then
-		find "${D}/usr" -iname "carla-control*" | xargs rm
-	fi
 }
 
 pkg_postinst() {
