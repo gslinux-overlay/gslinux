@@ -42,7 +42,7 @@ CDEPEND="
 	media-libs/ladspa-sdk
 	media-libs/zita-resampler
 	media-libs/zita-convolver
-	dev-util/meson
+	dev-build/meson
 	=dev-lang/faust-9999
 "
 RDEPEND="${CDEPEND}"
