@@ -23,49 +23,8 @@ src_unpack() {
 
 src_compile() { :; }
 
-make_wrapper_my() {
-	local wrapper=$1 bin=$2 chdir=$3 libdir=$4 path=$5
-	local tmpwrapper="${T}/tmp.wrapper.${wrapper##*/}"
-
-	(
-	echo '#!/bin/bash'
-	if [[ -n ${libdir} ]] ; then
-		local var
-		if [[ ${CHOST} == *-darwin* ]] ; then
-			var=DYLD_LIBRARY_PATH
-		else
-			var=LD_LIBRARY_PATH
-		fi
-		sed 's/^X//' <<-EOF || die
-			if [ "\${${var}+set}" = "set" ] ; then
-			X	export ${var}="\${${var}}:${EPREFIX}${libdir}"
-			else
-			X	export ${var}="${EPREFIX}${libdir}"
-			fi
-		EOF
-	fi
-	[[ -n ${chdir} ]] && printf 'cd "%s" &&\n' "${EPREFIX}${chdir}"
-	# We don't want to quote ${bin} so that people can pass complex
-	# things as ${bin} ... "./someprog --args"
-	printf '%s "$@"\n' "${bin/#\//${EPREFIX}/}"
-	) > "${tmpwrapper}"
-	chmod go+rx "${tmpwrapper}"
-
-	if [[ -n ${path} ]] ; then
-		(
-		exeopts -m 0755
-		exeinto "${path}"
-		newexe "${tmpwrapper}" "${wrapper}"
-		) || die
-	else
-		newbin "${tmpwrapper}" "${wrapper}"
-	fi
-}
-
 src_install() {
 	dodir /opt
-	cp -pPR "${S}/usr/bin/myoffice-standard-home-edition" "${D}/opt/" || die
-	make_wrapper_my myoffice-text "QT_PLUGIN_PATH=/opt/myoffice-standard-home-edition/lib/ /opt/myoffice-standard-home-edition/MyOffice\ Text\ Home\ Edition.sh"
-	make_wrapper_my myoffice-spreadsheet "QT_PLUGIN_PATH=/opt/myoffice-standard-home-edition/lib/ /opt/myoffice-standard-home-edition/MyOffice\ Spreadsheet\ Home\ Edition.sh"
+	cp -pPR "${S}/" "${D}/" || die
 }
 
