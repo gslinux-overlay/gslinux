@@ -23,8 +23,4 @@ src_unpack() {
 
 src_compile() { :; }
 
-src_install() {
-	dodir /opt
-	cp -pPR "${S}/*" "${D}/" || die
-}
 
