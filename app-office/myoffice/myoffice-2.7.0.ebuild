@@ -27,6 +27,7 @@ src_install() {
 	dodir /opt
 	cp -pPR "${S}/opt/myoffice-standard-home-edition" "${D}/opt/" || die
 	dodir /usr
-	cp -pPR "${S}/usr/{bin,share}/" "${D}/usr/" || die
+	cp -pPR "${S}/usr/bin/" "${D}/usr/" || die
+	cp -pPR "${S}/usr/share/" "${D}/usr/" || die
 }
 
