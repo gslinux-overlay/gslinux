@@ -64,7 +64,7 @@ make_wrapper_my() {
 
 src_install() {
 	dodir /opt
-	cp -pPR "${S}/usr/local/bin/myoffice-standard-home-edition" "${D}/opt/" || die
+	cp -pPR "${S}/usr/bin/myoffice-standard-home-edition" "${D}/opt/" || die
 	make_wrapper_my myoffice-text "QT_PLUGIN_PATH=/opt/myoffice-standard-home-edition/lib/ /opt/myoffice-standard-home-edition/MyOffice\ Text\ Home\ Edition.sh"
 	make_wrapper_my myoffice-spreadsheet "QT_PLUGIN_PATH=/opt/myoffice-standard-home-edition/lib/ /opt/myoffice-standard-home-edition/MyOffice\ Spreadsheet\ Home\ Edition.sh"
 }
