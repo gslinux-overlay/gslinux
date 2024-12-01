@@ -12,6 +12,7 @@ if [[ ${PV} == *9999 ]]; then
 	# Disable submodules to prevent external plugins from being built and installed
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/falkTX/Carla.git"
+	KEYWORDS=""
 	EGIT_SUBMODULES=()
 else
 	SRC_URI="https://github.com/falkTX/Carla/archive/v${PV}.tar.gz -> ${P}.tar.gz"
