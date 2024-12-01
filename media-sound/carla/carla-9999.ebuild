@@ -27,7 +27,7 @@ IUSE="alsa gtk opengl pulseaudio rdf sf2 sndfile X"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}
-	$(python_gen_cond_dep 'dev-python/PyQt5[gui,opengl?,svg,widgets,${PYTHON_USEDEP}]')
+	$(python_gen_cond_dep 'dev-python/pyqt5[gui,opengl?,svg,widgets,${PYTHON_USEDEP}]')
 	virtual/jack
 	alsa? ( media-libs/alsa-lib )
 	gtk? ( x11-libs/gtk+:3 )
@@ -64,7 +64,7 @@ src_compile() {
 		DEFAULT_QT=5
 		HAVE_ALSA=$(usex alsa true false)
 		HAVE_FLUIDSYNTH=$(usex sf2 true false)
-		GTK2=$(usex false)
+		GTK2=false
 		HAVE_GTK3=$(usex gtk true false)
 		HAVE_LIBLO=false
 		HAVE_PULSEAUDIO=$(usex pulseaudio true false)
