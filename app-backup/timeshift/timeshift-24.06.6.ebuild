@@ -20,7 +20,7 @@ DEPEND="
 	dev-libs/json-glib
 	x11-libs/vte:2.91[vala]
 	>=dev-libs/libgee-0.18.0:=
-	>=x11-libs/xapp-1.0.4
+	>=x11-libs/xapp-1.0.4[introspection,vala]
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
 "
