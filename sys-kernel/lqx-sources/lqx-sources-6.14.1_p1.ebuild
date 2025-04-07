@@ -3,7 +3,7 @@
 
 EAPI="8"
 ETYPE="sources"
-K_WANT_GENPATCHES="base extras"
+K_WANT_GENPATCHES="extras"
 K_GENPATCHES_VER="1"
 CKV="$(ver_cut 1-3)"
 K_SECURITY_UNSUPPORTED="1"
